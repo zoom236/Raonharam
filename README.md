@@ -1,6 +1,6 @@
 # Hide
 # Metaverse Final Project
-### Project Team Name : 라온하람
+### Project Team Name : 라온하람(Raonharam)
 ### Project Name : 머리카락 보일라 
 ### Participant
 * 박경만
