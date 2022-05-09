@@ -161,6 +161,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         Light.SetActive(false);
         Neon.SetActive(true);
         RenderSettings.skybox = Sky[0];
+        Debug.Log("밤으로 변경 요청");
         //SoundManager.instance.Play();
     }
 
@@ -171,6 +172,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         Light.SetActive(true);
         Neon.SetActive(false);
         RenderSettings.skybox = Sky[1];
+        Debug.Log("낮으로 변경 요청");
         //SoundManager.instance.Play();
     }
 
