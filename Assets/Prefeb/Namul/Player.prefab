@@ -1380,6 +1380,14 @@ MonoBehaviour:
   AN: {fileID: 5289864799287943688}
   PV: {fileID: 0}
   NickNameText: {fileID: 0}
+  BBADDA: {fileID: 0}
+  ABox: {fileID: 0}
+  Sky: []
+  Light: {fileID: 0}
+  Neon: {fileID: 0}
+  maxHealth: 100
+  currentHealth: 0
+  healthBar: {fileID: 0}
 --- !u!114 &3996162715357102935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1402,7 +1410,7 @@ MonoBehaviour:
   - {fileID: 1433566652478633045}
   - {fileID: 1347126166082915587}
   - {fileID: 5452879218808514843}
-  sceneViewId: 1
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &1347126166082915587
