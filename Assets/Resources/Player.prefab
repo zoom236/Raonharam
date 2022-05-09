@@ -382,11 +382,8 @@ MonoBehaviour:
     SynchronizeType: 1
     Name: Blend
   - Type: 9
-    SynchronizeType: 1
-    Name: BBADDA
-  - Type: 9
-    SynchronizeType: 1
-    Name: Hit
+    SynchronizeType: 0
+    Name: isThrow
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
