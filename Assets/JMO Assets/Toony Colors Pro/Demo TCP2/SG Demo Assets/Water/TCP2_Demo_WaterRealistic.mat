@@ -4,229 +4,199 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: TCP2_Demo_WaterRealistic
   m_Shader: {fileID: 4800000, guid: b7c970a370a5f4041adb0953b37bb7ff, type: 3}
-  m_ShaderKeywords: _EMISSION
+  m_ShaderKeywords: TCP2_REFLECTIONS_FRESNEL TCP2_RIM_LIGHTING_LIGHTMASK TCP2_SHADOW_LIGHT_COLOR
+    TCP2_UV_NORMALS_FULL
   m_LightmapFlags: 1
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
+  disabledShaderPasses: []
   m_SavedProperties:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TexEnvs:
-    - first:
-        name: _BumpMap
-      second:
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
         m_Texture: {fileID: 2800000, guid: c9de4a6ca27ab52479c42e95c4ec1194, type: 3}
         m_Scale: {x: 8, y: 4}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _DetailAlbedoMap
-      second:
+    - _DetailAlbedoMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _DetailMask
-      second:
+    - _DetailMask:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _DetailNormalMap
-      second:
+    - _DetailNormalMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _EmissionMap
-      second:
+    - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _FoamTex
-      second:
+    - _FoamTex:
         m_Texture: {fileID: 2800000, guid: 869319dead08c3b4a9c074af06b585f4, type: 3}
         m_Scale: {x: 4, y: 4}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _MainTex
-      second:
+    - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 8, y: 8}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _Mask1
-      second:
+    - _Mask1:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _MetallicGlossMap
-      second:
+    - _MatCapMask:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _OcclusionMap
-      second:
+    - _MatCapTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - first:
-        name: _ParallaxMap
-      second:
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Ramp:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflectionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ShadowBaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - first:
-        name: _BumpScale
-      second: 1
-    - first:
-        name: _Cutoff
-      second: 0.5
-    - first:
-        name: _DepthAlpha
-      second: 1.5
-    - first:
-        name: _DepthDistance
-      second: 0.6
-    - first:
-        name: _DepthMinAlpha
-      second: 0.5
-    - first:
-        name: _DetailNormalMapScale
-      second: 1
-    - first:
-        name: _DstBlend
-      second: 0
-    - first:
-        name: _DstBlendTCP2
-      second: 10
-    - first:
-        name: _FoamSmooth
-      second: 0.078
-    - first:
-        name: _FoamSpread
-      second: 2
-    - first:
-        name: _FoamStrength
-      second: 0.8
-    - first:
-        name: _GlossMapScale
-      second: 1
-    - first:
-        name: _Glossiness
-      second: 0.5
-    - first:
-        name: _GlossyReflections
-      second: 1
-    - first:
-        name: _Metallic
-      second: 0
-    - first:
-        name: _Mode
-      second: 0
-    - first:
-        name: _NormalDepthInfluence
-      second: 0.142
-    - first:
-        name: _OcclusionStrength
-      second: 1
-    - first:
-        name: _Parallax
-      second: 0.02
-    - first:
-        name: _RampSmooth
-      second: 0.641
-    - first:
-        name: _RampThreshold
-      second: 0.5
-    - first:
-        name: _ReflRoughness
-      second: 0
-    - first:
-        name: _ReflStrength
-      second: 1
-    - first:
-        name: _RimMax
-      second: 1
-    - first:
-        name: _RimMin
-      second: 0
-    - first:
-        name: _Shininess
-      second: 10
-    - first:
-        name: _SmoothnessTextureChannel
-      second: 0
-    - first:
-        name: _SpecularHighlights
-      second: 1
-    - first:
-        name: _SrcBlend
-      second: 1
-    - first:
-        name: _SrcBlendTCP2
-      second: 5
-    - first:
-        name: _UVSec
-      second: 0
-    - first:
-        name: _UVWaveAmplitude
-      second: 0.01
-    - first:
-        name: _UVWaveFrequency
-      second: 0.5
-    - first:
-        name: _UVWaveSpeed
-      second: 1.5
-    - first:
-        name: _WaveFrequency
-      second: 2
-    - first:
-        name: _WaveHeight
-      second: 0.2
-    - first:
-        name: _WaveSpeed
-      second: 1
-    - first:
-        name: _ZWrite
-      second: 1
-    - first:
-        name: __dummy__
-      second: 0
+    - _BumpScale: 1
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _DepthAlpha: 1.5
+    - _DepthDistance: 0.6
+    - _DepthMinAlpha: 0.5
+    - _DetailNormalMapScale: 1
+    - _DirectIntensityOutline: 1
+    - _DstBlend: 0
+    - _DstBlendTCP2: 10
+    - _EmissionChannel: 4
+    - _FoamSmooth: 0.078
+    - _FoamSpread: 2
+    - _FoamStrength: 0.8
+    - _FresnelMax: 1.5
+    - _FresnelMin: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _IndirectIntensity: 1
+    - _IndirectIntensityOutline: 0
+    - _MatCapMaskChannel: 0
+    - _MatCapType: 0
+    - _Metallic: 0
+    - _Mode: 0
+    - _NormalDepthInfluence: 0.142
+    - _NormalsSource: 0
+    - _NormalsUVType: 0
+    - _OcclusionChannel: 0
+    - _OcclusionStrength: 1
+    - _OutlineLightingType: 0
+    - _OutlineLightingTypeURP: 0
+    - _OutlineMaxWidth: 1
+    - _OutlineMinWidth: 1
+    - _OutlinePixelSizeType: 0
+    - _OutlineTextureLOD: 5
+    - _OutlineTextureType: 0
+    - _OutlineWidth: 1
+    - _Parallax: 0.02
+    - _RampBands: 4
+    - _RampBandsSmoothing: 0.1
+    - _RampOffset: 0
+    - _RampScale: 1
+    - _RampSmooth: 0.641
+    - _RampSmoothing: 0.1
+    - _RampThreshold: 0.5
+    - _RampType: 0
+    - _ReceiveShadowsOff: 1
+    - _ReflRoughness: 0
+    - _ReflStrength: 1
+    - _ReflectionMapType: 0
+    - _ReflectionSmoothness: 0.5
+    - _RenderingMode: 0
+    - _RimMax: 1
+    - _RimMin: 0
+    - _ShadowColorLightAtten: 1
+    - _Shininess: 10
+    - _SingleIndirectColor: 0
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SpecularMapType: 0
+    - _SpecularRoughness: 0.5
+    - _SpecularToonSize: 0.25
+    - _SpecularToonSmoothness: 0.05
+    - _SpecularType: 0
+    - _SrcBlend: 1
+    - _SrcBlendTCP2: 5
+    - _UVSec: 0
+    - _UVWaveAmplitude: 0.01
+    - _UVWaveFrequency: 0.5
+    - _UVWaveSpeed: 1.5
+    - _UseAlphaTest: 0
+    - _UseEmission: 0
+    - _UseFresnelReflections: 1
+    - _UseMatCap: 0
+    - _UseMatCapMask: 0
+    - _UseMobileMode: 0
+    - _UseNormalMap: 0
+    - _UseOcclusion: 0
+    - _UseOutline: 0
+    - _UseReflections: 0
+    - _UseRim: 0
+    - _UseRimLightMask: 1
+    - _UseShadowTexture: 0
+    - _UseSpecular: 0
+    - _WaveFrequency: 2
+    - _WaveHeight: 0.2
+    - _WaveSpeed: 1
+    - _ZWrite: 1
+    - __dummy__: 0
     m_Colors:
-    - first:
-        name: _BumpSpeed
-      second: {r: 0.2, g: 0.2, b: -0.2, a: -0.2}
-    - first:
-        name: _Color
-      second: {r: 0.20891002, g: 0.45795533, b: 0.50735295, a: 0.8627451}
-    - first:
-        name: _DepthColor
-      second: {r: 0.066733986, g: 0.29797322, b: 0.547, a: 1}
-    - first:
-        name: _EmissionColor
-      second: {r: 0, g: 0, b: 0, a: 1}
-    - first:
-        name: _FoamColor
-      second: {r: 0.9, g: 0.9, b: 0.9, a: 0.922}
-    - first:
-        name: _FoamSpeed
-      second: {r: 1, g: 1, b: -1, a: -1}
-    - first:
-        name: _HColor
-      second: {r: 1, g: 1, b: 1, a: 1}
-    - first:
-        name: _RimColor
-      second: {r: 0.30147058, g: 0.2948205, b: 0.2948205, a: 1}
-    - first:
-        name: _SColor
-      second: {r: 0.598128, g: 0.73157454, b: 0.816, a: 1}
-    - first:
-        name: _SpecColor
-      second: {r: 0.1297578, g: 0.14705884, b: 0.14013842, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BumpSpeed: {r: 0.2, g: 0.2, b: -0.2, a: -0.2}
+    - _Color: {r: 0.061676744, g: 0.15273742, b: 0.16981131, a: 0.8627451}
+    - _DepthColor: {r: 0.066733986, g: 0.29797322, b: 0.547, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FoamColor: {r: 0.9, g: 0.9, b: 0.9, a: 0.922}
+    - _FoamSpeed: {r: 1, g: 1, b: -1, a: -1}
+    - _HColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ReflectionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RimColor: {r: 0.30147058, g: 0.2948205, b: 0.2948205, a: 1}
+    - _SColor: {r: 0.598128, g: 0.73157454, b: 0.816, a: 1}
+    - _SpecColor: {r: 0.1297578, g: 0.14705884, b: 0.14013842, a: 1}
+    - _SpecularColor: {r: 0.75, g: 0.75, b: 0.75, a: 1}
+  m_BuildTextureStacks: []
