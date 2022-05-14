@@ -2,68 +2,52 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class SkillBase : MonoBehaviour
+public class SkillBase : MonoBehaviourPunCallbacks, IPunObservable
 {
     public Text CoolTime_Text;                  // ���� �ð� ǥ��(Text)
     public Image CoolTime_Image;                // ���� �ð� ǥ��(Image)
-    private float time_cooltime = 30;           // ��Ÿ�� �ð�
-    private float time_current;                 // ��ų ������� �����ð�
-    private float time_start;                   // time_current�� ����� ���� �ð�����
-    private bool isEnded = true;                // ��Ÿ�� ������ ��
-
-    void Start()
-    {
+    protected float time_cooltime = 30;           // ��Ÿ�� �ð�
+    protected bool isEnable = true;                // ��Ÿ�� ������ ��
+    private float counting;
+#region  IPunObservable Methods
+   public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
+       if(stream.IsWriting){  //Warn. Careful Order;
+           //To Send
+           //ex> stream.SendNext;
+       }else{
+           //To Receieve
+           //ex> var = (type)stream.ReceiveNext();
+       }
+   }
+#endregion
+    void Start(){
+        counting = 0f;
+    }
+    void Update(){
+        if(Input.GetKey(KeyCode.Space))
         Trigger_Skill();
-    }
 
-    void Update()
-    {
-        if (isEnded)
-            return;
-        Check_CoolTime();
-    }
-
-    private void Check_CoolTime()                   // ��ų ������� ���� �ð� �˻�
-    {
-        time_current = Time.time - time_start;
-        if (time_current < time_cooltime)
-        {
-            Set_FillAmount(time_cooltime - time_current);
-        }
-        else if (!isEnded)
-        {
-            End_CoolTime();
+        if (!isEnable){
+            counting += Time.deltaTime;
+            if(counting >= time_cooltime){
+                counting = 0f;
+                SetCanUsable(true);
+            }
+            Set_FillAmount(time_cooltime - counting);
         }
     }
+    [PunRPC]
+    public virtual bool Trigger_Skill(){
+        SetCanUsable(false);
+        return false;}
 
-    private void End_CoolTime()                     // ��Ÿ���� ���� ��ų ������ �������� ����
-    {
-        Set_FillAmount(0);
-        isEnded = true;
-        CoolTime_Text.gameObject.SetActive(false);
-        Debug.Log("Skills Available!");
-    }
-
-    private void Trigger_Skill()                    // ��ų �ߵ�
-    {
-        if (!isEnded)
-        {
-            Debug.LogError("Hold On");
-            return;
-        }
-
-        Reset_CoolTime();
-        Debug.LogError("Trigger_Skill!");
-    }
-
-    private void Reset_CoolTime()                   // ��Ÿ�� ����
-    {
-        CoolTime_Text.gameObject.SetActive(true);
-        time_current = time_cooltime;
-        time_start = Time.time;
-        Set_FillAmount(time_cooltime);
-        isEnded = false;
+    protected void SetCanUsable(bool isEnable){
+        this.isEnable = isEnable;
+        CoolTime_Text.gameObject.SetActive(!isEnable);
+        CoolTime_Image.gameObject.SetActive(!isEnable);
     }
     private void Set_FillAmount(float _value)       // ��ų ���� �ð� Textǥ��
     {
