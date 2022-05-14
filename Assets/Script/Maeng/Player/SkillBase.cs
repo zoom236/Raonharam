@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SkillCoolTime : MonoBehaviour
+public class SkillBase : MonoBehaviour
 {
-    public Text CoolTime_Text;                  // ³²Àº ½Ã°£ Ç¥½Ã(Text)
-    public Image CoolTime_Image;                // ³²Àº ½Ã°£ Ç¥½Ã(Image)
-    private float time_cooltime = 30;           // ÄðÅ¸ÀÓ ½Ã°£
-    private float time_current;                 // ½ºÅ³ Àç»ç¿ë±îÁö ³²Àº½Ã°£
-    private float time_start;                   // time_current¸¦ ¸¸µé±â À§ÇØ ½Ã°£ÀúÀå
-    private bool isEnded = true;                // ÄðÅ¸ÀÓ ³¡³µÀ» ¶§
+    public Text CoolTime_Text;                  // ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ Ç¥ï¿½ï¿½(Text)
+    public Image CoolTime_Image;                // ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ Ç¥ï¿½ï¿½(Image)
+    private float time_cooltime = 30;           // ï¿½ï¿½Å¸ï¿½ï¿½ ï¿½Ã°ï¿½
+    private float time_current;                 // ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ã°ï¿½
+    private float time_start;                   // time_currentï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½
+    private bool isEnded = true;                // ï¿½ï¿½Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 
     void Start()
     {
@@ -24,7 +24,7 @@ public class SkillCoolTime : MonoBehaviour
         Check_CoolTime();
     }
 
-    private void Check_CoolTime()                   // ½ºÅ³ Àç»ç¿ë±îÁö ³²Àº ½Ã°£ °Ë»ç
+    private void Check_CoolTime()                   // ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½Ë»ï¿½
     {
         time_current = Time.time - time_start;
         if (time_current < time_cooltime)
@@ -37,7 +37,7 @@ public class SkillCoolTime : MonoBehaviour
         }
     }
 
-    private void End_CoolTime()                     // ÄðÅ¸ÀÓÀÌ ³¡³ª ½ºÅ³ Àç»ç¿ëÀÌ °¡´ÉÇØÁø ½ÃÁ¡
+    private void End_CoolTime()                     // ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     {
         Set_FillAmount(0);
         isEnded = true;
@@ -45,7 +45,7 @@ public class SkillCoolTime : MonoBehaviour
         Debug.Log("Skills Available!");
     }
 
-    private void Trigger_Skill()                    // ½ºÅ³ ¹ßµ¿
+    private void Trigger_Skill()                    // ï¿½ï¿½Å³ ï¿½ßµï¿½
     {
         if (!isEnded)
         {
@@ -57,7 +57,7 @@ public class SkillCoolTime : MonoBehaviour
         Debug.LogError("Trigger_Skill!");
     }
 
-    private void Reset_CoolTime()                   // ÄðÅ¸ÀÓ ¸®¼Â
+    private void Reset_CoolTime()                   // ï¿½ï¿½Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     {
         CoolTime_Text.gameObject.SetActive(true);
         time_current = time_cooltime;
@@ -65,7 +65,7 @@ public class SkillCoolTime : MonoBehaviour
         Set_FillAmount(time_cooltime);
         isEnded = false;
     }
-    private void Set_FillAmount(float _value)       // ½ºÅ³ Àç»ç¿ë ½Ã°£ TextÇ¥½Ã
+    private void Set_FillAmount(float _value)       // ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ TextÇ¥ï¿½ï¿½
     {
         CoolTime_Image.fillAmount = _value / time_cooltime;
         string txt = _value.ToString("0");
