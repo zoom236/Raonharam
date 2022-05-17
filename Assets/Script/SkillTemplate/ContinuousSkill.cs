@@ -5,12 +5,12 @@ public class ContinuousSkill: SkillBase{
 	protected float EffctTime = 1f;
 	private float effect_counter = 0f;
 
-	private float SkillUseTime = 0f;
-	private float SkillReuseTime = 0f;
-	private AudioSource SkillSound = null;
+	private float SkillUseTime = 0f;   //사용지속시간
+	private float SkillReuseTime = 0f;  //재사용시간
+	private AudioSource SkillSound = null;   //소리
 
 	//skillEndCondition variable
-	private float SkillTimeOver;
+	private float SkillTimeOver;  //시간종료
 
 #region Virtual Methods
 	protected virtual bool canCancel(){return false;}
@@ -35,23 +35,23 @@ public class ContinuousSkill: SkillBase{
 		}
 	}
 
-	public void ChildAbility()
+	public void ChildAbility()   //아이능력
     {
 
     }
 
-	public void DokiAbility()
+	public void DokiAbility() //도깨비 능력
     {
 
     }
 
-	public void SkillEndCondition()
+	public void SkillEndCondition() //스킬해제조건
     {
 
     }
 
 	//타플레이어 아이템 사용시
-	void OnCollisionEnter(Collision ObjectColiisionSkillEnd)
+	void OnCollisionEnter(Collision ObjectColiisionSkillEnd)   //충돌시 스킬 해제
     {
 
     }

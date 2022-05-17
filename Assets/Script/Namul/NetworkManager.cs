@@ -70,6 +70,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate("Player", SpawnPos.position, Quaternion.identity);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            Debug.Log("아이 소환");
         }
         else
         {

@@ -35,7 +35,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     public GameObject Light, Neon;
 
 
- 
 
     void Awake()
     {
@@ -53,8 +52,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
         Neon.SetActive(false);
 
-
-        
 
     }
 
@@ -80,7 +77,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             }
             Move();
 
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.C))
             {
                 Smoke();
             }
@@ -113,6 +110,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
                 }
 
             }
+
             //Debug.Log("Äá");
             //if (Physics.Raycast(ray, out rayhit, 100, floorMask))
             //{
@@ -123,8 +121,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             //    Rigidbody rigidBean = instantRedBean.GetComponent<Rigidbody>();
             //    rigidBean.AddForce(nextVec, ForceMode.Impulse);
             //}
-
-         
 
 
         }
@@ -279,8 +275,21 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     }
     void Smoke()
     {
-        //PhotonNetwork.Instantiate("SmokeGrenade", transform.position, Quaternion.identity);
+        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit rayhit;
+        int floorMask = LayerMask.GetMask("Floor");
+        if (Physics.Raycast(ray, out rayhit, 100))
+        {
+
+            Debug.DrawRay(transform.position, transform.forward * 100f, Color.red);
+            Vector3 nextVec = rayhit.point - transform.position;
+            nextVec.y = 6;
+
+            PhotonNetwork.Instantiate("ThrowGrenade", transform.position, Quaternion.identity).GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, nextVec);
+
+        }
     }
+
     void Move()
     {
         if (PV.IsMine)
