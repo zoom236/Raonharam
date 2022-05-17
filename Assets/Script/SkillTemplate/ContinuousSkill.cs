@@ -4,6 +4,14 @@ using Photon.Realtime;
 public class ContinuousSkill: SkillBase{
 	protected float EffctTime = 1f;
 	private float effect_counter = 0f;
+
+	private float SkillUseTime = 0f;
+	private float SkillReuseTime = 0f;
+	private AudioSource SkillSound = null;
+
+	//skillEndCondition variable
+	private float SkillTimeOver;
+
 #region Virtual Methods
 	protected virtual bool canCancel(){return false;}
 	protected virtual void giveEffect(){}
@@ -17,6 +25,7 @@ public class ContinuousSkill: SkillBase{
 		base.SkillFire();
 		giveEffect();
 	}
+
 #endregion
 	protected void CheckSkillEffectforUpdate(){
 		if(true){ //Condition means a state that effect is on
@@ -25,4 +34,30 @@ public class ContinuousSkill: SkillBase{
 				removeEffect();
 		}
 	}
+
+	public void ChildAbility()
+    {
+
+    }
+
+	public void DokiAbility()
+    {
+
+    }
+
+	public void SkillEndCondition()
+    {
+
+    }
+
+	//타플레이어 아이템 사용시
+	void OnCollisionEnter(Collision ObjectColiisionSkillEnd)
+    {
+
+    }
+
+	void OnTriggerEnter(Collider ObjectColiisionSkillEnd)
+    {
+
+    }
 };
