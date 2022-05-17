@@ -12,9 +12,9 @@ public class CameraMovement : MonoBehaviour
     private float rotX;
     private float rotY;
 
-    public Transform realCamera;        // Ä«¸Þ¶ó Á¤º¸
-    public Vector3 dirNormalized;       // ¹æÇâ
-    public Vector3 finalDir;            // ÃÖÁ¾ ¹æÇâ
+    public Transform realCamera;        // Ä«ï¿½Þ¶ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public Vector3 dirNormalized;       // ï¿½ï¿½ï¿½ï¿½
+    public Vector3 finalDir;            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     public float minDistance;
     public float maxDistance;
     public float finalDistance;
@@ -43,17 +43,6 @@ public class CameraMovement : MonoBehaviour
         Quaternion rot = Quaternion.Euler(rotX, rotY, 0);
         transform.rotation = rot;
 
-        if(objectTofollow == null)
-        {
-            try
-            {
-                objectTofollow = GameObject.Find("FollowCam").transform;
-            }
-            catch
-            {
-                return;
-            }
-        }
     }
 
     void LateUpdate()
