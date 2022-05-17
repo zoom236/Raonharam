@@ -55,6 +55,7 @@ MonoBehaviour:
   - NRPC
   - SkillFire
   - DirRPC2
+  - Jump
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
     public float smoothness = 10f;
     [SerializeField]
     Text NickNameText;
+    public Animator AN;
     void Awake(){
         rb = GetComponent<Rigidbody>();
         NickNameText.text = photonView.IsMine ? PhotonNetwork.NickName : photonView.Owner.NickName;
@@ -65,7 +66,7 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
                 rb.AddForce(moveDirection * 3);
 
                 float percent = ((run) ? 1 : 0.5f) * moveDirection.magnitude;
-                //AN.SetFloat("Blend", percent, 0.1f, Time.deltaTime);
+                AN.SetFloat("Blend", percent, 0.1f, Time.deltaTime);
 
             }
         }
