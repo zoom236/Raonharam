@@ -16,8 +16,7 @@ public class BulletScript : MonoBehaviourPunCallbacks
 
     void Go()
     {
-        GameObject instantRedBean = PhotonNetwork.Instantiate("RedBean", transform.position, transform.rotation);
-        Rigidbody rigidBean = instantRedBean.GetComponent<Rigidbody>();
+        Rigidbody rigidBean = this.GetComponent<Rigidbody>();
         rigidBean.AddForce(nextVec, ForceMode.Impulse);
     }
 

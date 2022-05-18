@@ -46,15 +46,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         NickNameText.text = PV.IsMine ? PhotonNetwork.NickName : PV.Owner.NickName;
         NickNameText.color = PV.IsMine ? Color.green : Color.red;
 
-
-
         Light = GameObject.Find("Directional Light");
         Neon = GameObject.Find("NeonOBJ");
 
         Neon.SetActive(false);
-
-
-        
 
     }
 

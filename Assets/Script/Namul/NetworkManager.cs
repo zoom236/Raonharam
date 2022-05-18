@@ -46,7 +46,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         DisconnectPanel.SetActive(false);
         Spawn();
-        main.SetActive(false);
+        //main?.SetActive(false);
     }
 
     IEnumerator DestroyBullet()
@@ -64,16 +64,17 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public void Spawn()
     {
-        main.SetActive(false);
+        //main?.SetActive(false);
         if (!doke)
         {
-            PhotonNetwork.Instantiate("Player", SpawnPos.position, Quaternion.identity);
+            PhotonNetwork.Instantiate("Kid", SpawnPos.position, Quaternion.identity);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            Debug.Log("아이 소환");
         }
         else
         {
-            PhotonNetwork.Instantiate("Enemy", SpawnPos.position, Quaternion.identity);
+            PhotonNetwork.Instantiate("Dokkebi", SpawnPos.position, Quaternion.identity);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
@@ -84,6 +85,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         DisconnectPanel.SetActive(true);
         RespawnPanel.SetActive(false);
-        main.SetActive(true);
+        //main?.SetActive(true);
     }
 }

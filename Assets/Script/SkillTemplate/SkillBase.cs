@@ -7,21 +7,21 @@ using Photon.Realtime;
 
 public class SkillBase : MonoBehaviourPunCallbacks
 {
-    public Text CoolTime_Text;                  // ���� �ð� ǥ��(Text)
-    public Image CoolTime_Image;                // ���� �ð� ǥ��(Image)
-    protected float time_cooltime = 30;           // ��Ÿ�� �ð�
-    protected bool isEnable = true;                // ��Ÿ�� ������ ��
+    public Text CoolTime_Text;                  //쿨타임 표시(Text)
+    public Image CoolTime_Image;                // 쿨타임 표시(Image)
+    protected float time_cooltime = 30;           // 쿨타임 시간
+    protected bool isEnable = true;                // 쿨타임스킬을 사용할 수 있는 상태 확인
     private float cooltime_counter = 0f;
 #region Virtual Methods
     [PunRPC]
     public virtual void SkillFire(){ //In Subclass
         SetCanUsable(false);
     }
-    protected virtual bool isEffectiveness(){
+    protected virtual bool isEffectiveness(){   //스킬을 사용할 수 있는지 없는지
         //Effectiveness means player is on a state that can use skill
         return isEnable;
     }
-    protected virtual void SkillBaseUpstream(PhotonStream stream){
+    protected virtual void SkillBaseUpstream(PhotonStream stream){    //서버에 동기화시킬려면 포톤 
         //Must be Add super(stream); And, Last SkillBaseUpstream must be called in on OnPhotonSerializeView
         stream.SendNext(isEnable);
         stream.SendNext(time_cooltime);
@@ -37,6 +37,9 @@ public class SkillBase : MonoBehaviourPunCallbacks
         CoolTime_Text.gameObject.SetActive(!isEnable);
         CoolTime_Image.gameObject.SetActive(!isEnable);
     }
+
+
+    //쿨타임 시간 체크
     protected void CheckCoolTimeForUpdate(){
         if (!isEffectiveness()){
             cooltime_counter += Time.deltaTime;
@@ -47,7 +50,7 @@ public class SkillBase : MonoBehaviourPunCallbacks
             Set_FillAmount(time_cooltime - cooltime_counter);
         }
     }
-    private void Set_FillAmount(float _value)       // ��ų ���� �ð� Textǥ��
+    private void Set_FillAmount(float _value)       // 스킬 재사용 시간 시각화
     {
         CoolTime_Image.fillAmount = _value / time_cooltime;
         string txt = _value.ToString("0");
