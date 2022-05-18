@@ -1,0 +1,9 @@
+diff a/Assets/ThirdParty/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset b/Assets/ThirdParty/Photon/PhotonUnityNetworking/Resources/PhotonServerSettings.asset	(rejected hunks)
+@@ -53,6 +53,7 @@
+    - DD
+    - DRPC
+    - NRPC
+++<<<<<<< Updated upstream
+ +  - SkillFire
+ +=======
+    - DirRPC2

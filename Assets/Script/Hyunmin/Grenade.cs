@@ -15,17 +15,26 @@ public class Grenade : MonoBehaviour
     void Start()
     {
         StartCoroutine(Explosion());
-        
+        effectObj.SetActive(false);
     }
 
     // Update is called once per frame
     IEnumerator Explosion()
     {
-        yield return new WaitForSeconds(3F);
+        yield return new WaitForSeconds(3f);
         rigid.velocity = Vector3.zero;
         rigid.angularVelocity = Vector3.zero;
-        
         meshObj.SetActive(false);
         effectObj.SetActive(true);
+
+        RaycastHit[] rayHits = Physics.SphereCastAll(transform.position, 10, Vector3.up, 0f, LayerMask.GetMask("Enemy"));
+
+
+    }
+
+
+     void Update()
+    {
+        
     }
 }
