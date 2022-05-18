@@ -324,7 +324,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 2
+  Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
@@ -374,6 +374,7 @@ MonoBehaviour:
   finalSpeed: 0
   smoothness: 10
   NickNameText: {fileID: 995902947094809192}
+  AN: {fileID: 5393780422729637956}
 --- !u!1 &5393780422734228437
 GameObject:
   m_ObjectHideFlags: 0
