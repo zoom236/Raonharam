@@ -574,6 +574,7 @@ MonoBehaviour:
   finalSpeed: 0
   smoothness: 10
   NickNameText: {fileID: 0}
+  AN: {fileID: 7140724120173641560}
 --- !u!1 &7140724120186352841
 GameObject:
   m_ObjectHideFlags: 0

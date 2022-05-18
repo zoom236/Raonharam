@@ -310,7 +310,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigid: {fileID: 507756672663522017}
   effectobj: {fileID: 4345071248625525399}
-  objectobj: {fileID: 507756672663522019}
 --- !u!136 &1653082120
 CapsuleCollider:
   m_ObjectHideFlags: 0
