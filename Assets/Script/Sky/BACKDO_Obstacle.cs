@@ -6,7 +6,7 @@ using Photon.Realtime;
 
 public class BACKDO_Obstacle : MonoBehaviourPunCallbacks
 {
-    public float DestroyTime = 2.0f;
+    public float DestroyTime = 5.0f;
     void Start()
     {
         Destroy(gameObject, DestroyTime);
