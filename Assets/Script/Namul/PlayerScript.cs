@@ -35,6 +35,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     public GameObject Light, Neon;
 
 
+ 
 
     void Awake()
     {
@@ -51,6 +52,10 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         Neon = GameObject.Find("NeonOBJ");
 
         Neon.SetActive(false);
+
+
+        
+
     }
 
     void Update()
@@ -90,6 +95,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
 
             }
 
+
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
             RaycastHit rayhit;
             int floorMask = LayerMask.GetMask("Floor");
@@ -105,6 +111,7 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
                     PhotonNetwork.Instantiate("RedBean", transform.position, Quaternion.identity)
                         .GetComponent<PhotonView>().RPC("DirRPC", RpcTarget.All, nextVec);
                 }
+
             }
             //Debug.Log("ƒ·");
             //if (Physics.Raycast(ray, out rayhit, 100, floorMask))
@@ -117,9 +124,13 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
             //    rigidBean.AddForce(nextVec, ForceMode.Impulse);
             //}
 
+         
+
+
         }
 
-        if(Input.GetKeyDown(KeyCode.J))
+
+        if (Input.GetKeyDown(KeyCode.J))
         {
             PV.RPC("NightRPC", RpcTarget.All);
         }
@@ -142,20 +153,26 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
+   
+
     [PunRPC]
     void NRPC()
     {
         Light.SetActive(false);
         Neon.SetActive(true);
         RenderSettings.skybox = Sky[0];
+        Debug.Log("π„¿∏∑Œ ∫Ø∞Ê ø‰√ª");
         //SoundManager.instance.Play();
     }
+
+
     [PunRPC]
     void DRPC()
     {
         Light.SetActive(true);
         Neon.SetActive(false);
         RenderSettings.skybox = Sky[1];
+        Debug.Log("≥∑¿∏∑Œ ∫Ø∞Ê ø‰√ª");
         //SoundManager.instance.Play();
     }
 
@@ -264,7 +281,6 @@ public class PlayerScript : MonoBehaviourPunCallbacks, IPunObservable
     {
         //PhotonNetwork.Instantiate("SmokeGrenade", transform.position, Quaternion.identity);
     }
-
     void Move()
     {
         if (PV.IsMine)
