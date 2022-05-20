@@ -12,6 +12,15 @@ public class MarkerSetter : MonoBehaviourPunCallbacks
     void Start() {
         if(!photonView.IsMine){
             Marker.GetComponent<MeshRenderer>().material = Others;
-        }    
+        }
+        else{
+            GameObject obj = GameObject.Find("PrivateMiniCam");
+            if(obj != null){
+                Debug.LogWarning($"TackPlayer.cs : {obj.GetComponent<TrackPlayer>()!=null}");
+                obj.GetComponent<TrackPlayer>()?.SetTargetPlayer(transform);
+            }
+            else
+                Debug.LogWarning("Cant Find");
+        }
     }
 }
