@@ -403,6 +403,7 @@ GameObject:
   - component: {fileID: 7140724120173641565}
   - component: {fileID: 7140724120173641564}
   - component: {fileID: 8582097658024898627}
+  - component: {fileID: 1313648359062463023}
   m_Layer: 7
   m_Name: Dokkebi
   m_TagString: Player
@@ -427,6 +428,7 @@ Transform:
   - {fileID: 7140724121360107637}
   - {fileID: 2071193002016345918}
   - {fileID: 3009104351070407384}
+  - {fileID: 7101977719474941825}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -575,6 +577,20 @@ MonoBehaviour:
   smoothness: 10
   NickNameText: {fileID: 0}
   AN: {fileID: 7140724120173641560}
+--- !u!114 &1313648359062463023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7140724120173641566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e0bb515e6d3514ca96a60727ff0d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Marker: {fileID: 4014881754452152251}
+  Others: {fileID: 2100000, guid: 675b7ad4023a7554bba5049b79c2b298, type: 2}
 --- !u!1 &7140724120186352841
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,4 +2058,71 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: ce3cdb2cae83f47469a99a6165b3ab9d, type: 3}
   m_PrefabInstance: {fileID: 4907362637382741596}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6418226949803526589
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7140724120173641575}
+    m_Modifications:
+    - target: {fileID: 4295682513061946940, guid: 4eb62edb95526934c9d8233e65ff0ecb, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295682513061946940, guid: 4eb62edb95526934c9d8233e65ff0ecb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295682513061946940, guid: 4eb62edb95526934c9d8233e65ff0ecb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295682513061946940, guid: 4eb62edb95526934c9d8233e65ff0ecb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295682513061946940, guid: 4eb62edb95526934c9d8233e65ff0ecb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295682513061946940, guid: 4eb62edb95526934c9d8233e65ff0ecb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295682513061946940, guid: 4eb62edb95526934c9d8233e65ff0ecb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295682513061946940, guid: 4eb62edb95526934c9d8233e65ff0ecb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295682513061946940, guid: 4eb62edb95526934c9d8233e65ff0ecb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295682513061946940, guid: 4eb62edb95526934c9d8233e65ff0ecb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295682513061946940, guid: 4eb62edb95526934c9d8233e65ff0ecb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7972962096536192518, guid: 4eb62edb95526934c9d8233e65ff0ecb, type: 3}
+      propertyPath: m_Name
+      value: Mark
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4eb62edb95526934c9d8233e65ff0ecb, type: 3}
+--- !u!1 &4014881754452152251 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7972962096536192518, guid: 4eb62edb95526934c9d8233e65ff0ecb, type: 3}
+  m_PrefabInstance: {fileID: 6418226949803526589}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7101977719474941825 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4295682513061946940, guid: 4eb62edb95526934c9d8233e65ff0ecb, type: 3}
+  m_PrefabInstance: {fileID: 6418226949803526589}
   m_PrefabAsset: {fileID: 0}
