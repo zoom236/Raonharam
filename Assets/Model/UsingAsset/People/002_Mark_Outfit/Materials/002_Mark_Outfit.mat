@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 002_Mark_Outfit
-  m_Shader: {fileID: -6465566751694194690, guid: df5bb027d94a6c44bb32b3c31ec1303f, type: 3}
+  m_Shader: {fileID: 4800000, guid: 70e19283e0f45cc41b48de36b262b1bf, type: 3}
   m_ShaderKeywords: TCP2_DISABLE_WRAPPED_LIGHT TCP2_OUTLINE_MIN_MAX_SIZE TCP2_RAMPTEXT
     TCP2_REFLECTIONS_FRESNEL TCP2_RIM_LIGHTING_LIGHTMASK TCP2_SHADOW_LIGHT_COLOR
     TCP2_UV1_AS_NORMALS TCP2_UV_NORMALS_FULL _GLOSSYREFLECTIONS_OFF _RECEIVE_SHADOWS_OFF
@@ -47,11 +47,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DissolveMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: af5515bfe14f1af4a9b8b3bf306b9261, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DissolveRamp:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: badc79676ebe83c40af64a7df2ed6586, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -122,12 +122,12 @@ Material:
     - _BumpScale: 1
     - _BumpScale_snow: 1
     - _Cull: 2
-    - _Cutoff: 0.5
+    - _Cutoff: 0
     - _DetailNormalMapScale: 1
     - _DirectIntensityOutline: 1
-    - _DissolveGradientWidth: 0.2
-    - _DissolveValue: 0.5
-    - _DstBlend: 0
+    - _DissolveGradientWidth: 1
+    - _DissolveValue: 0
+    - _DstBlend: 10
     - _EmissionChannel: 4
     - _EnableConstSizeOutline: 0
     - _EnableTexturedOutline: 0
@@ -179,7 +179,7 @@ Material:
     - _ReceiveShadowsOff: 0
     - _ReflectionMapType: 0
     - _ReflectionSmoothness: 0.5
-    - _RenderingMode: 0
+    - _RenderingMode: 1
     - _RimMax: 1
     - _RimMin: 0.5
     - _RimStrength: 0.5
@@ -201,7 +201,7 @@ Material:
     - _SpecularToonSize: 0.25
     - _SpecularToonSmoothness: 0.05
     - _SpecularType: 0
-    - _SrcBlend: 1
+    - _SrcBlend: 5
     - _TCP2_DISABLE_WRAPPED_LIGHT: 1
     - _TCP2_RAMPTEXT: 0
     - _TCP2_SPEC_TOON: 0
