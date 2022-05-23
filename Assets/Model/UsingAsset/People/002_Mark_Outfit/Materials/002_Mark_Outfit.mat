@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 002_Mark_Outfit
-  m_Shader: {fileID: -6465566751694194690, guid: df5bb027d94a6c44bb32b3c31ec1303f, type: 3}
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: TCP2_DISABLE_WRAPPED_LIGHT TCP2_OUTLINE_MIN_MAX_SIZE TCP2_RAMPTEXT
     TCP2_REFLECTIONS_FRESNEL TCP2_RIM_LIGHTING_LIGHTMASK TCP2_SHADOW_LIGHT_COLOR
     TCP2_UV1_AS_NORMALS TCP2_UV_NORMALS_FULL _GLOSSYREFLECTIONS_OFF _RECEIVE_SHADOWS_OFF
@@ -23,7 +23,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 279e2672a38fef04e812d26d635a119f, type: 3}
+        m_Texture: {fileID: 2800000, guid: cc6285e85b161b84a8ece7fa016d2d25, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:

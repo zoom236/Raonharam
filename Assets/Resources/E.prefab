@@ -1784,7 +1784,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5367068454597565223
 Transform:
   m_ObjectHideFlags: 0
@@ -1893,6 +1893,9 @@ MonoBehaviour:
   NickNameText: {fileID: 969134362566488372}
   BBADDA: {fileID: 2186712935199068949}
   ABox: {fileID: 45360237294595743}
+  Sky: []
+  Light: {fileID: 0}
+  Neon: {fileID: 0}
 --- !u!114 &5367068454597565215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1953,11 +1956,8 @@ MonoBehaviour:
     SynchronizeType: 1
     Name: Blend
   - Type: 9
-    SynchronizeType: 1
-    Name: BBADDA
-  - Type: 9
-    SynchronizeType: 1
-    Name: Hit
+    SynchronizeType: 0
+    Name: isThrow
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
