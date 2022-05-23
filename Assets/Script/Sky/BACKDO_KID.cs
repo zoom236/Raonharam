@@ -7,11 +7,23 @@ using Photon.Realtime;
 
 public class BACKDO_KID : SkillBase
 {
+    public GameObject Kid;
     private bool aimOnOff = false;
+    private GameObject Indicator;
+
+    public void Start()
+    {
+        Vector3 offset = new Vector3(0, -1, 10);
+        Indicator = PhotonNetwork.Instantiate("Indicator", transform.position + offset, Quaternion.Euler(0,90,0));
+        Indicator.transform.SetParent(Kid.transform, false);
+        Indicator.SetActive(false);
+    }
 
     public void Update()
     {
         CheckCoolTimeForUpdate();
+
+        Indicator.transform.localPosition = GetIndicatorPosition();
 
         if (photonView.IsMine)
         {
@@ -22,12 +34,12 @@ public class BACKDO_KID : SkillBase
                 if(aimOnOff)
                 {
                     Debug.LogWarning("Targetting...");
-                    ShowIndicator();
+                    Indicator.SetActive(true);
                 }
                 else
                 {
                     Debug.LogWarning("Off");
-                    HideIndicator();
+                    Indicator.SetActive(false);
                 }
             }
 
@@ -38,12 +50,15 @@ public class BACKDO_KID : SkillBase
                     SpawnObstacle();
                     //Debug.LogWarning("Spawning...");
                     aimOnOff = false;
+                    Indicator.SetActive(false);
+                    //SkillFire();
                 }
 
                 if(Input.GetMouseButtonDown(1))
                 {
                     //Debug.LogWarning("Cancel...");
                     aimOnOff = false;
+                    Indicator.SetActive(false);
                 }
             }
         }
@@ -53,18 +68,22 @@ public class BACKDO_KID : SkillBase
     public override void SkillFire()
     { 
         base.SkillFire();
-
     }
 
-    // 장애물 소환 될 위치 표시
-    public void ShowIndicator()
+    public Vector3 GetIndicatorPosition()
     {
-
-    }
-
-    public void HideIndicator()
-    {
-
+        RaycastHit rayhit;
+        Vector3 indicatorPos;
+        Ray ray = new Ray(transform.position, transform.forward);
+        if (Physics.Raycast(ray, out rayhit, 10))
+        {
+            indicatorPos = rayhit.point - transform.position;
+        }
+        else
+        {
+            indicatorPos = transform.forward * 10f;
+        }
+        return indicatorPos;
     }
 
     // 장애물 소환
@@ -72,7 +91,7 @@ public class BACKDO_KID : SkillBase
     {
         RaycastHit rayhit;
         Vector3 obstaclePos;
-        Vector3 offset = new Vector3(0, 3, 0);
+        Vector3 offset = new Vector3(0, 5, 0);
         Ray ray = new Ray(transform.position, transform.forward);
         if (Physics.Raycast(ray, out rayhit, 10))
         {
@@ -85,6 +104,6 @@ public class BACKDO_KID : SkillBase
             obstaclePos = transform.position + transform.forward * 10f;
             Debug.DrawRay(transform.position, transform.forward * 10f, Color.red, 5f);
         }
-        PhotonNetwork.Instantiate("RedBean", obstaclePos + offset, Quaternion.identity);
-    }   
+        PhotonNetwork.Instantiate("Obstacle", obstaclePos + offset, Quaternion.Euler(0,90,0));
+    }
 }
