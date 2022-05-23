@@ -9,8 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Car_Lamps
   m_Shader: {fileID: -6465566751694194690, guid: df5bb027d94a6c44bb32b3c31ec1303f, type: 3}
-  m_ShaderKeywords: TCP2_REFLECTIONS_FRESNEL TCP2_RIM_LIGHTING_LIGHTMASK TCP2_SHADOW_LIGHT_COLOR
-    TCP2_UV_NORMALS_FULL
+  m_ShaderKeywords: TCP2_OUTLINE_MIN_MAX_SIZE TCP2_REFLECTIONS_FRESNEL TCP2_RIM_LIGHTING_LIGHTMASK
+    TCP2_SHADOW_LIGHT_COLOR TCP2_UV_NORMALS_FULL
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -112,7 +112,7 @@ Material:
     - _OutlineLightingTypeURP: 0
     - _OutlineMaxWidth: 1
     - _OutlineMinWidth: 1
-    - _OutlinePixelSizeType: 0
+    - _OutlinePixelSizeType: 3
     - _OutlineTextureLOD: 5
     - _OutlineTextureType: 0
     - _OutlineWidth: 1

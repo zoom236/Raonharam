@@ -89,7 +89,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DissolveGradientWidth: 0.1
-    - _DissolveValue: 0.9887202
+    - _DissolveValue: 0
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -125,3 +125,4 @@ Material:
     - _SColor: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 1}
     - _ScanlinesTex_SC: {r: 0, g: -0.02, b: 0, a: 0}
     - _TriplanarSamplingStrength: {r: 8, g: 8, b: 8, a: 1}
+  m_BuildTextureStacks: []
