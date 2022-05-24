@@ -21,8 +21,6 @@ public class BACKDO_KID : SkillBase
 
     public void Update()
     {
-        CheckCoolTimeForUpdate();
-
         Indicator.transform.localPosition = GetIndicatorPosition();
 
         if (photonView.IsMine)
@@ -51,6 +49,7 @@ public class BACKDO_KID : SkillBase
                     //Debug.LogWarning("Spawning...");
                     aimOnOff = false;
                     Indicator.SetActive(false);
+                    CheckCoolTimeForUpdate();
                     //SkillFire();
                 }
 
