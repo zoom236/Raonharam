@@ -17,7 +17,7 @@ public class ItemSlot : MonoBehaviourPunCallbacks
 
     private void Update()
     {
-        if(transform.childCount <= 0)
+        if(transform.childCount <= 0 && inventory != null)
         {
             inventory.slots[num].isEmpty = true;
         }
