@@ -53,10 +53,12 @@ public class InventoryComponent : MonoBehaviourPunCallbacks
         {
             slots[index].isEmpty = true;
             GameObject temp = slots[index].slotObj.transform.GetChild(0).gameObject;
-            Vector3 characterPosition = transform.position;
+            VectorParams vectorParams = new VectorParams();
+            vectorParams.characterPosition = transform.position;
+            vectorParams.forwardVector = transform.forward;
             if(temp != null)
             {
-                temp.BroadcastMessage("Fire", characterPosition);
+                temp.BroadcastMessage("Fire", vectorParams);
             }
         }
     }
