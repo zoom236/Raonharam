@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.UI;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
@@ -68,13 +69,15 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         if (!doke)
         {
             PhotonNetwork.Instantiate("Kid", SpawnPos.position, Quaternion.identity);
+            PhotonNetwork.LocalPlayer.SetCustomProperties(new Hashtable(){{"Dok",true}});
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            Debug.Log("¾ÆÀÌ ¼ÒÈ¯");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯");
         }
         else
         {
             PhotonNetwork.Instantiate("Dokkebi", SpawnPos.position, Quaternion.identity);
+            PhotonNetwork.LocalPlayer.SetCustomProperties(new Hashtable(){{"Dok",false}});
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }

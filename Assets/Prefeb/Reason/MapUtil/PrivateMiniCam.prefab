@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4428222591548250337}
   - component: {fileID: 4428222591548250350}
   - component: {fileID: 4428222591548250351}
+  - component: {fileID: 6033435755435424401}
   m_Layer: 0
   m_Name: PrivateMiniCam
   m_TagString: Untagged
@@ -87,3 +88,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5151a19f030a041448d58dac919da3f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6033435755435424401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4428222591548250348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664645ff9bea292459f6e9a5ce97dce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  YUT_Markers: []
+  radius: 0

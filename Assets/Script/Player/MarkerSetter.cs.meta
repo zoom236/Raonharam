@@ -5,7 +5,8 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - Marker: {instanceID: 0}
-  - Others: {fileID: 2100000, guid: 675b7ad4023a7554bba5049b79c2b298, type: 2}
+  - Others: {fileID: 2100000, guid: cd7db450c223854469b3894feec427e8, type: 2}
+  - OtherTex: {fileID: 2800000, guid: 0f54240d499f30249ad7760dcd7b9eeb, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
