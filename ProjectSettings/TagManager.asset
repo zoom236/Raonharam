@@ -16,6 +16,7 @@ TagManager:
   - FxTemporaire
   - Spawn
   - BBADDA
+  - Mark
   layers:
   - Default
   - TransparentFX
@@ -25,12 +26,12 @@ TagManager:
   - UI
   - Item
   - Player
-  - 
+  - Mark
   - Floor
   - Enemy
   - EnemyDead
   - RedBean
-  - 
+  - Mesh
   - 
   - 
   - 
