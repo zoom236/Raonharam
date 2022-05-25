@@ -22,6 +22,8 @@ public class BACKDO_DOKI : SkillBase
             {                
                 PhotonNetwork.Instantiate("BACKDO_CLONE", transform.position + 2 * transform.forward, Quaternion.identity)
                     .GetComponent<PhotonView>().RPC("CloneMove", RpcTarget.All, moveDirection);
+
+                CheckCoolTimeForUpdate();
             }
         }
     }

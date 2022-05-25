@@ -14,15 +14,17 @@ public class SkillBase : MonoBehaviourPunCallbacks
     private bool uiset = false;              
     private float cooltime_counter = 0f;
     private void Awake() {
-        Transform SkillCoolSet = GameObject.Find("SkillCoolSet")?.transform;
-        if(SkillCoolSet != null){
-            Debug.Log("Skill Cool set Found");
+        if(photonView.IsMine){
+            Transform SkillCoolSet = GameObject.Find("SkillCoolSet")?.transform;
+            if(SkillCoolSet != null){
+                Debug.Log("Skill Cool set Found");
             CoolTime_Image = SkillCoolSet.GetChild(0).GetComponent<Image>();
             CoolTime_Text = SkillCoolSet.GetChild(1).GetComponent<Text>();
             uiset = true;
+            }
+            else
+                Debug.Log("Skill Cool set NOT Found");
         }
-        else
-            Debug.Log("Skill Cool set NOT Found");
     }
 #region Virtual Methods
     [PunRPC]
@@ -33,7 +35,7 @@ public class SkillBase : MonoBehaviourPunCallbacks
         //Effectiveness means player is on a state that can use skill
         return isEnable;
     }
-    protected virtual void SkillBaseUpstream(PhotonStream stream){    //서버에 동기화시킬려면 포톤 
+    protected virtual void SkillBaseUpstream(PhotonStream stream){    //서버에 동기화시킬려면 포톤
         //Must be Add super(stream); And, Last SkillBaseUpstream must be called in on OnPhotonSerializeView
         stream.SendNext(isEnable);
         stream.SendNext(time_cooltime);
@@ -50,8 +52,6 @@ public class SkillBase : MonoBehaviourPunCallbacks
         CoolTime_Text.gameObject.SetActive(!isEnable);
         CoolTime_Image.gameObject.SetActive(!isEnable);
     }
-
-
     //쿨타임 시간 체크
     protected void CheckCoolTimeForUpdate(){
         if (!isEffectiveness()){
