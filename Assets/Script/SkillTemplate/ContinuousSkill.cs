@@ -8,6 +8,7 @@ public class ContinuousSkill: SkillBase{
 	private float SkillUseTime = 0f;   //사용지속시간
 	private float SkillReuseTime = 0f;  //재사용시간
 	private AudioSource SkillSound = null;   //소리
+	protected bool IsEffected = false;
 
 	//skillEndCondition variable
 	private float SkillTimeOver;  //시간종료
