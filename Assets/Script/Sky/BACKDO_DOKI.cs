@@ -6,7 +6,11 @@ using Photon.Pun;
 using Photon.Realtime;
 
 public class BACKDO_DOKI : SkillBase
-{ 
+{
+    private Vector3 forward;
+    private Vector3 right;
+    private Vector3 moveDirection;
+    
     void Update()
     {
         if(photonView.IsMine)
@@ -14,14 +18,14 @@ public class BACKDO_DOKI : SkillBase
             Vector2 moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             bool isMove = moveInput.magnitude != 0;
 
-            Vector3 forward = transform.TransformDirection(Vector3.forward);
-            Vector3 right = transform.TransformDirection(Vector3.right);
-            Vector3 moveDirection = forward * moveInput.y + right * moveInput.x;        
+            forward = transform.TransformDirection(Vector3.forward);
+            right = transform.TransformDirection(Vector3.right);
+            moveDirection = forward * moveInput.y + right * moveInput.x;        
 
             if (Input.GetKeyDown(KeyCode.Q))
-            {                
-                PhotonNetwork.Instantiate("BACKDO_CLONE", transform.position + 2 * transform.forward, Quaternion.identity)
-                    .GetComponent<PhotonView>().RPC("CloneMove", RpcTarget.All, moveDirection);
+            {
+                GetComponent<PhotonView>().RPC("SpawnClone", RpcTarget.All);
+                //SpawnClone();
 
                 CheckCoolTimeForUpdate();
             }
@@ -32,5 +36,12 @@ public class BACKDO_DOKI : SkillBase
     public override void SkillFire()
     {
         base.SkillFire();
+    }
+
+    [PunRPC]
+    public void SpawnClone()
+    {
+        PhotonNetwork.Instantiate("BACKDO_CLONE", transform.position + 2 * transform.forward, Quaternion.identity)
+                    .GetComponent<PhotonView>().RPC("CloneMove", RpcTarget.All, moveDirection);
     }
 }

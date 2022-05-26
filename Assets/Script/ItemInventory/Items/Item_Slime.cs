@@ -21,8 +21,10 @@ public class Item_Slime : MonoBehaviourPunCallbacks
          * 
          *
          */
-        Vector3 spawnPosition = vectorParams.characterPosition + vectorParams.forwardVector;
-        PhotonNetwork.Instantiate("Slime", spawnPosition , Quaternion.identity);
+        Vector3 offset = new Vector3(0, 1, 0);
+        Vector3 spawnPosition = vectorParams.characterPosition + vectorParams.forwardVector + offset;
+        PhotonNetwork.Instantiate("Slime", spawnPosition, Quaternion.Euler(-90, 0, 90))
+            .GetComponent<PhotonView>().RPC("ActivateSlime", RpcTarget.All, vectorParams.forwardVector);
 
         Destroy(this.gameObject);
     }

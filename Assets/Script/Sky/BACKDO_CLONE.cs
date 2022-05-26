@@ -18,7 +18,7 @@ public class BACKDO_CLONE : MonoBehaviourPunCallbacks
 
     void Start()
     {
-        //Destroy(gameObject, DestroyTime);
+        Destroy(gameObject, DestroyTime);
     }
 
     void Update()
@@ -27,23 +27,6 @@ public class BACKDO_CLONE : MonoBehaviourPunCallbacks
 
         float percent = ((run) ? 1 : 0.5f) * moveDirection.magnitude;
         AN.SetFloat("Blend", percent, 0.1f, Time.deltaTime);
-
-        //Ray[] rays = new Ray[4];
-        //rays[0] = new Ray(transform.position, transform.forward);
-        //rays[1] = new Ray(transform.position, -transform.forward);
-        //rays[2] = new Ray(transform.position, transform.right);
-        //rays[3] = new Ray(transform.position, -transform.right);
-        //RaycastHit rayhit;
-
-        //for(int i = 0; i < rays.Length; i++)
-        //{
-        //    if (Physics.Raycast(rays[i], out rayhit, 1))
-        //    {
-        //        DestroyClone();
-        //        return;
-        //    }
-        //}
-
     }
 
     void DestroyClone()
@@ -54,8 +37,6 @@ public class BACKDO_CLONE : MonoBehaviourPunCallbacks
     [PunRPC]
     void CloneMove(Vector3 direction)
     {
-        //Debug.LogWarning("CLONEMOVE");
-
         moveDirection = direction;
     }
 }
