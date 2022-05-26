@@ -17,8 +17,10 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
     [SerializeField]
     Text NickNameText;
     public Animator AN;
-    void Awake(){
+    void OnEnable(){
+        AN = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        NickNameText = GetComponentInChildren<Text>();
         NickNameText.text = photonView.IsMine ? PhotonNetwork.NickName : photonView.Owner.NickName;
         NickNameText.color = photonView.IsMine ? Color.green : Color.red;
         isJump = false;

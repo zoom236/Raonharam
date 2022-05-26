@@ -402,8 +402,8 @@ GameObject:
   - component: {fileID: 7140724120173641567}
   - component: {fileID: 7140724120173641565}
   - component: {fileID: 7140724120173641564}
-  - component: {fileID: 8582097658024898627}
   - component: {fileID: 1313648359062463023}
+  - component: {fileID: 382645016583498945}
   m_Layer: 7
   m_Name: Dokkebi
   m_TagString: Player
@@ -531,7 +531,6 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 7140724120173641567}
   - {fileID: 7140724120173641564}
-  - {fileID: 0}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -559,24 +558,6 @@ MonoBehaviour:
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
---- !u!114 &8582097658024898627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7140724120173641566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a37d245c97e44ce4aa1f22e069460649, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  runSpeed: 8
-  finalSpeed: 0
-  smoothness: 10
-  NickNameText: {fileID: 2598669355564340596}
-  AN: {fileID: 7140724120173641560}
 --- !u!114 &1313648359062463023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,6 +574,19 @@ MonoBehaviour:
   Others: {fileID: 2100000, guid: cd7db450c223854469b3894feec427e8, type: 2}
   OtherTex: {fileID: 2800000, guid: 0f54240d499f30249ad7760dcd7b9eeb, type: 3}
   ShownTime: 10
+--- !u!114 &382645016583498945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7140724120173641566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 741297a3c2ffb2d4493d8bb0aa433a80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dokkebi: 1
 --- !u!1 &7140724120186352841
 GameObject:
   m_ObjectHideFlags: 0

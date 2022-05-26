@@ -29,7 +29,7 @@ public class GIRL_KID : ContinuousSkill
         originSpeed = player1.speed;
         ps = GetComponentInChildren<ParticleSystem>();
 
-        ps.Stop();
+        ps?.Stop();
         EffctTime = 15f;
     }
 
@@ -48,7 +48,7 @@ public class GIRL_KID : ContinuousSkill
     protected override void giveEffect()
     {
         IsEffected = true;
-        ps.Play();
+        ps?.Play();
         Debug.Log("������");
         if (IsDirtRoad)
         {
@@ -70,7 +70,7 @@ public class GIRL_KID : ContinuousSkill
 
 
         //�ð��� �� ������ ��� 
-        ps.Stop();
+        ps?.Stop();
         IsEffected = false;
         
     }
