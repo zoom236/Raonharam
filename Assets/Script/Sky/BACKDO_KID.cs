@@ -45,7 +45,8 @@ public class BACKDO_KID : SkillBase
             {
                 if(Input.GetMouseButtonDown(0))
                 {
-                    SpawnObstacle();
+                    GetComponent<PhotonView>().RPC("SpawnObstacle", RpcTarget.All);
+                    //SpawnObstacle();
                     //Debug.LogWarning("Spawning...");
                     aimOnOff = false;
                     Indicator.SetActive(false);
@@ -86,6 +87,7 @@ public class BACKDO_KID : SkillBase
     }
 
     // 장애물 소환
+    [PunRPC]
     public void SpawnObstacle()
     {
         RaycastHit rayhit;
