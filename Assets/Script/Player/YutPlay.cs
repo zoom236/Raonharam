@@ -89,9 +89,9 @@ public class YutPlay: MonoBehaviourPunCallbacks
     [PunRPC]
     void Girl_Comp(){
         gameObject.AddComponent<PlayerMovement>();
-        //if(Dokkebi)
-        //    gameObject.AddComponent<GIRL_DOKI>();
-        //else
+        if(Dokkebi)
+            gameObject.AddComponent<GIRL_DOKI>();
+        else
             gameObject.AddComponent<GIRL_KID>();
         Destroy(this);
     }
