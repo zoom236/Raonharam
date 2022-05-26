@@ -17,10 +17,10 @@ public class GIRL_KID : ContinuousSkill
     public Text text_Timer;
 
     float originSpeed; 
-    float speedEffect = 1.25f; // Â¤½Å ´É·Â 
-    float IsDirtRoadEffect = 0.5f; //Èë±æ
+    float speedEffect = 1.25f; // Â¤ï¿½ï¿½ ï¿½É·ï¿½ 
+    float IsDirtRoadEffect = 0.5f; //ï¿½ï¿½ï¿½
     bool IsDirtRoad = false;
-    bool IsUseSkill = false; //½ºÅ³»ç¿ë¿©ºÎ 
+    bool IsUseSkill = false; //ï¿½ï¿½Å³ï¿½ï¿½ë¿©ï¿½ï¿½ 
     
     void Start()
     {
@@ -45,11 +45,11 @@ public class GIRL_KID : ContinuousSkill
 
     }
 
-    public override void giveEffect()
+    protected override void giveEffect()
     {
         IsEffected = true;
         ps.Play();
-        Debug.Log("ÂïÈ÷³ª");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
         if (IsDirtRoad)
         {
             player1.speed = originSpeed * speedEffect * IsDirtRoadEffect;
@@ -65,17 +65,17 @@ public class GIRL_KID : ContinuousSkill
 
     public virtual void removeEffect()
     {
-        //Å¸ ÇÃ·¹ÀÌ¾î ¾ÆÀÌÅÛ »ç¿ë ¹üÀ§¿¡ µé¾î¿ÔÀ» ¶§ 
+        //Å¸ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ 
         player1.speed = originSpeed;
 
 
-        //½Ã°£ÀÌ ´Ù ³¡³µÀ» °æ¿ì 
+        //ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 
         ps.Stop();
         IsEffected = false;
         
     }
 
-    //ÄÚ·çÆ¾¿ë ÇÔ¼ö 
+    //ï¿½Ú·ï¿½Æ¾ï¿½ï¿½ ï¿½Ô¼ï¿½ 
     private IEnumerator routine()
     {
         yield return new WaitForSeconds(EffctTime);
