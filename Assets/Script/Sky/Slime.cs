@@ -6,43 +6,46 @@ using Photon.Realtime;
 
 public class Slime : MonoBehaviourPunCallbacks
 {
-    private Vector3 forwardVector;
     private Vector3 startPosition;
     private Vector3 targetPosition;
-
-    private void Start()
-    {
-        startPosition = transform.position;
-        Debug.LogWarning("Go go Slime");
-        
-        RaycastHit hit;
-        Ray ray = new Ray(startPosition, forwardVector);
-        if (Physics.SphereCast(startPosition, 1, forwardVector, out hit, 10))
-        {
-            targetPosition = hit.point - startPosition;
-            Debug.DrawRay(startPosition, targetPosition, Color.green, 5f);
-        }
-        else
-        {
-            targetPosition = forwardVector * 10f;
-            Debug.DrawRay(startPosition, forwardVector * 10f, Color.red, 5f);
-        }
-
-        GetComponent<Rigidbody>().AddForce(forwardVector * 1000);
-    }
 
     private void Update()
     {
         //transform.position = Vector3.MoveTowards(transform.position, targetPosition - startPosition, 1f);
-        
+        Vector3 spd = Vector3.zero;
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref spd, 0.05f);
     }
 
-    [PunRPC]
-    void ActivateSlime(Vector3 forwardVector)
+    private void OnTriggerEnter(Collider other)
     {
-        this.forwardVector = forwardVector;
+        if(other.tag.Equals("Player"))
+        {
+            // юс╫ц            
+            other.GetComponent<BACKDO_CLONE>().HitBySlime(startPosition);
+            Destroy(this.gameObject);
+        }
+    }
 
-        Destroy(gameObject, 3f);
+    public void ActivateSlime(Vector3 forwardVector)
+    {
+        startPosition = transform.position;
+        targetPosition = transform.position;
+        Debug.LogWarning("Go go Slime");
+
+        RaycastHit hit;
+        Ray ray = new Ray(startPosition, forwardVector);
+        if (Physics.SphereCast(startPosition, 1, forwardVector, out hit, 10))
+        {
+            targetPosition = hit.point;
+            //Debug.DrawRay(startPosition, targetPosition, Color.green, 5f);
+        }
+        else
+        {
+            targetPosition = startPosition + forwardVector * 10f;
+            //Debug.DrawRay(startPosition, targetPosition, Color.red, 5f);
+        }
+
+        Destroy(this.gameObject, 2f);
     } 
 
 }

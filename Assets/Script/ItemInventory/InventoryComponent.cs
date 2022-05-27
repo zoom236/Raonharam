@@ -9,10 +9,12 @@ public class InventoryComponent : MonoBehaviourPunCallbacks
     public List<SlotDataSystem> slots = new List<SlotDataSystem>();
     private int maxSlot = 3;
     public GameObject slotPrefab;
+    private GameObject myPlayer;
 
     private void Start()
     {
         GameObject slotPanel = GameObject.Find("InventoryUI");
+        myPlayer = gameObject;
 
         for(int i = 0; i < maxSlot; i++)
         {
@@ -53,12 +55,10 @@ public class InventoryComponent : MonoBehaviourPunCallbacks
         {
             slots[index].isEmpty = true;
             GameObject temp = slots[index].slotObj.transform.GetChild(0).gameObject;
-            VectorParams vectorParams = new VectorParams();
-            vectorParams.characterPosition = transform.position;
-            vectorParams.forwardVector = transform.forward;
+
             if(temp != null)
             {
-                temp.BroadcastMessage("Fire", vectorParams);
+                temp.BroadcastMessage("Fire", myPlayer);
             }
         }
     }
