@@ -6,25 +6,18 @@ using Photon.Realtime;
 
 public class Item_Slime : MonoBehaviourPunCallbacks
 {     
-    void Fire(VectorParams vectorParams)
+    void Fire(GameObject myPlayer)
     {
         Debug.LogWarning("Use Slime");
         /*
-         * VectorParams 벡터 2개를 가지고 있는 클래스입니다.
-         * Vector3 characterPosition -> Current character's position Vector
-         * Vector3 forwardVector -> Current chrarcter's forward Vector
          * 
-         * 아이템 소환에 필요한 인자 두개 받아쓰세요
          * 
-         * Vector3 spawnPosition = vectorParams.characterPosition + vectorParams.forwardVector;
-         * PhotonNetwork.Instantiate("Slime", spawnPosition , Quaternion.identity);
          * 
-         *
          */
         Vector3 offset = new Vector3(0, 1, 0);
-        Vector3 spawnPosition = vectorParams.characterPosition + vectorParams.forwardVector + offset;
+        Vector3 spawnPosition = myPlayer.transform.position + myPlayer.transform.forward + offset;
         PhotonNetwork.Instantiate("Slime", spawnPosition, Quaternion.Euler(-90, 0, 90))
-            .GetComponent<PhotonView>().RPC("ActivateSlime", RpcTarget.All, vectorParams.forwardVector);
+            .GetComponent<Slime>().ActivateSlime(myPlayer.transform.forward);
 
         Destroy(this.gameObject);
     }

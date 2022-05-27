@@ -15,9 +15,11 @@ public class BACKDO_CLONE : MonoBehaviourPunCallbacks
     public Animator AN;
 
     private Vector3 moveDirection;
+    private Vector3 destination;
 
     void Start()
     {
+        destination = transform.position;
         Destroy(gameObject, DestroyTime);
     }
 
@@ -27,6 +29,8 @@ public class BACKDO_CLONE : MonoBehaviourPunCallbacks
 
         float percent = ((run) ? 1 : 0.5f) * moveDirection.magnitude;
         AN.SetFloat("Blend", percent, 0.1f, Time.deltaTime);
+        //Vector3 spd = Vector3.zero;
+        //transform.position = Vector3.SmoothDamp(transform.position, destination, ref spd, 0.05f);
     }
 
     void DestroyClone()
@@ -38,5 +42,11 @@ public class BACKDO_CLONE : MonoBehaviourPunCallbacks
     void CloneMove(Vector3 direction)
     {
         moveDirection = direction;
+    }
+
+    public void HitBySlime(Vector3 origin)
+    {
+        Vector3 offset = new Vector3(0, -1, 0);
+        this.destination = origin + offset;
     }
 }

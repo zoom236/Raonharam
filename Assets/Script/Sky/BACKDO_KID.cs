@@ -7,7 +7,6 @@ using Photon.Realtime;
 
 public class BACKDO_KID : SkillBase
 {
-    public GameObject Kid;
     private bool aimOnOff = false;
     private GameObject Indicator;
 
@@ -15,7 +14,7 @@ public class BACKDO_KID : SkillBase
     {
         Vector3 offset = new Vector3(0, -1, 10);
         Indicator = PhotonNetwork.Instantiate("Indicator", transform.position + offset, Quaternion.Euler(0,90,0));
-        Indicator.transform.SetParent(Kid.transform, false);
+        Indicator.transform.SetParent(gameObject.transform, false);
         Indicator.SetActive(false);
     }
 
