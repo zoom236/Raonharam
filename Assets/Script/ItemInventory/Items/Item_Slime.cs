@@ -15,7 +15,7 @@ public class Item_Slime : MonoBehaviourPunCallbacks
          * 
          */
         Vector3 offset = new Vector3(0, 1, 0);
-        Vector3 spawnPosition = myPlayer.transform.position + myPlayer.transform.forward + offset;
+        Vector3 spawnPosition = myPlayer.transform.position + myPlayer.transform.forward * 2 + offset;
         PhotonNetwork.Instantiate("Slime", spawnPosition, Quaternion.Euler(-90, 0, 90))
             .GetComponent<Slime>().ActivateSlime(myPlayer.transform.forward);
 

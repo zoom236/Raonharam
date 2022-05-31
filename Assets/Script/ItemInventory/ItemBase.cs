@@ -19,10 +19,16 @@ public class ItemBase : MonoBehaviourPunCallbacks
                 {
                     Instantiate(slotItem, inven.slots[i].slotObj.transform, false);
                     inven.slots[i].isEmpty = false;
-                    Destroy(this.gameObject);
+                    GetComponent<PhotonView>().RPC("DestroyObject", RpcTarget.All);
                     break;
                 }
             }
         }
+    }
+
+    [PunRPC]
+    void DestroyObject()
+    {
+        Destroy(this.gameObject);
     }
 }
