@@ -13,17 +13,20 @@ public class InventoryComponent : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        GameObject slotPanel = GameObject.Find("InventoryUI");
-        myPlayer = gameObject;
-
-        for(int i = 0; i < maxSlot; i++)
+        if (photonView.IsMine)
         {
-            GameObject go = Instantiate(slotPrefab, slotPanel.transform, false);
-            go.name = "Slot_" + i;
-            SlotDataSystem slot = new SlotDataSystem();
-            slot.isEmpty = true;
-            slot.slotObj = go;
-            slots.Add(slot);
+            GameObject slotPanel = GameObject.Find("InventoryUI");
+            myPlayer = gameObject;
+
+            for (int i = 0; i < maxSlot; i++)
+            {
+                GameObject go = Instantiate(slotPrefab, slotPanel.transform, false);
+                go.name = "Slot_" + i;
+                SlotDataSystem slot = new SlotDataSystem();
+                slot.isEmpty = true;
+                slot.slotObj = go;
+                slots.Add(slot);
+            }
         }
     }
 

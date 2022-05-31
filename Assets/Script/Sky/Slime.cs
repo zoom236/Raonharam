@@ -21,7 +21,7 @@ public class Slime : MonoBehaviourPunCallbacks
         if(other.tag.Equals("Player"))
         {
             // юс╫ц            
-            other.GetComponent<BACKDO_CLONE>().HitBySlime(startPosition);
+            //other.GetComponent<BACKDO_CLONE>().HitBySlime(startPosition);
             Destroy(this.gameObject);
         }
     }
